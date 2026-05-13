@@ -1,0 +1,14 @@
+# Copy this file to `.env` and fill in real values.
+# All keys here are tracked per CLAUDE.md rule #3.
+# Server-only secrets must NOT be prefixed with NEXT_PUBLIC_.
+
+# Production site URL (no trailing slash). Used for canonical URLs, OG metadata, sitemap.
+NEXT_PUBLIC_SITE_URL=
+
+# Analytics provider tracking ID (Plausible domain / PostHog key / GA measurement ID).
+# Provider choice TBD — see docs/dev_notes/Tasks for Humans.md.
+NEXT_PUBLIC_ANALYTICS_ID=
+
+# Server-only endpoint that receives early-access form submissions.
+# E.g. a Formspree URL, Zapier webhook, or internal API.
+DEMO_FORM_ENDPOINT=

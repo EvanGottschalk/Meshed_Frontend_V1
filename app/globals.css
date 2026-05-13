@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    background-color: #ffffff;
+    color: #0b0d14;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(122, 91, 255, 0.22);
+    color: #0b0d14;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background-image: linear-gradient(
+      90deg,
+      #3dc7e0 0%,
+      #7a5bff 28%,
+      #e45bc9 55%,
+      #f58a3c 80%,
+      #f5c84a 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .border-gradient-brand {
+    border-image: linear-gradient(
+        90deg,
+        #3dc7e0,
+        #7a5bff,
+        #e45bc9,
+        #f58a3c,
+        #f5c84a
+      )
+      1;
+  }
+
+  /* Subtle Vercel-style background grid for hero / featured sections */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(11, 13, 20, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 13, 20, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .bg-grid-on-alt {
+    background-image:
+      linear-gradient(to right, rgba(244, 245, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(244, 245, 248, 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Mask edges of horizontal scrolls / strips */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+}
+
+/* Global reduced-motion override (outside Tailwind layers so the * selector works). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

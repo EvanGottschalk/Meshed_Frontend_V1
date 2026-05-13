@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(where choco *)",
+      "Bash(where scoop *)",
+      "Bash(where python *)",
+      "Bash(where py *)",
+      "Bash(where magick *)",
+      "Bash(py -m pip install --quiet --user pymupdf)",
+      "Bash(py -c \"import fitz; print\\('pymupdf', fitz.__doc__.split\\(chr\\(10\\)\\)[0] if fitz.__doc__ else 'installed'\\)\")",
+      "Bash(py *)"
+    ]
+  }
+}
