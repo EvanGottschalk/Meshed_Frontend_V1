@@ -251,8 +251,15 @@ export function LiveMesh({ className }: LiveMeshProps) {
   }
 
   return (
-    <div ref={containerRef} className={cn("relative h-full w-full", className)}>
-      <canvas ref={canvasRef} className="h-full w-full" aria-hidden />
+    <div
+      ref={containerRef}
+      className={cn("relative h-full w-full touch-none", className)}
+    >
+      <canvas
+        ref={canvasRef}
+        className="h-full w-full touch-none"
+        aria-hidden
+      />
       <span className="sr-only">
         An animated network of verified-human nodes connected across a full
         color spectrum.
