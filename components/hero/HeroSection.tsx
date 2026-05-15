@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -59,20 +60,21 @@ export function HeroSection({ standalone }: SectionProps) {
 
             <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-fg-primary sm:text-5xl md:text-6xl lg:text-[64px]">
               {headlineWords.map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={reduced ? { opacity: 1 } : { opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.15 + i * 0.04,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="inline-block"
-                >
-                  {word}
+                <Fragment key={i}>
+                  <motion.span
+                    initial={reduced ? { opacity: 1 } : { opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.15 + i * 0.04,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="inline-block"
+                  >
+                    {word}
+                  </motion.span>
                   {i < headlineWords.length - 1 ? " " : ""}
-                </motion.span>
+                </Fragment>
               ))}
             </h1>
 
